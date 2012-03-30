@@ -1,0 +1,823 @@
+##############################################################################
+#                                                                            #
+# IAR MSP430 C/C++ Compiler V3.41A/W32  [Kickstart]    22/Dec/2006  22:45:35 #
+# Copyright 1996-2006 IAR Systems. All rights reserved.                      #
+#                                                                            #
+#    __rt_version  =  2                                                      #
+#    __double_size =  32                                                     #
+#    __reg_r4      =  free                                                   #
+#    __reg_r5      =  free                                                   #
+#    __pic         =  no                                                     #
+#    __core        =  64kb                                                   #
+#    Source file   =  C:\iarprojects\SD16_tempDemo\Temp.c                    #
+#    Command line  =  C:\iarprojects\SD16_tempDemo\Temp.c -lCN               #
+#                     C:\iarprojects\SD16_tempDemo\Debug\List\ -o            #
+#                     C:\iarprojects\SD16_tempDemo\Debug\Obj\ -z9 --debug    #
+#                     -e --double=32 -I "C:\Program Files\IAR                #
+#                     Systems\Embedded Workbench 4.0\430\INC\" -I            #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench       #
+#                     4.0\430\INC\CLIB\" --reduce_stack_usage                #
+#    List file     =  C:\iarprojects\SD16_tempDemo\Debug\List\Temp.lst       #
+#    Object file   =  C:\iarprojects\SD16_tempDemo\Debug\Obj\Temp.r43        #
+#                                                                            #
+#                                                                            #
+##############################################################################
+
+C:\iarprojects\SD16_tempDemo\Temp.c
+      1          #include  <msp430x20x3.h>
+
+   \                                 In segment DATA16_AN, at 0x0
+   \   unsigned char volatile __data16 IE1
+   \                     IE1:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x56
+   \   unsigned char volatile __data16 DCOCTL
+   \                     DCOCTL:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x57
+   \   unsigned char volatile __data16 BCSCTL1
+   \                     BCSCTL1:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x58
+   \   unsigned char volatile __data16 BCSCTL2
+   \                     BCSCTL2:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x21
+   \   unsigned char volatile __data16 P1OUT
+   \                     P1OUT:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x22
+   \   unsigned char volatile __data16 P1DIR
+   \                     P1DIR:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x29
+   \   unsigned char volatile __data16 P2OUT
+   \                     P2OUT:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x2a
+   \   unsigned char volatile __data16 P2DIR
+   \                     P2DIR:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x2e
+   \   unsigned char volatile __data16 P2SEL
+   \                     P2SEL:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0xb0
+   \   unsigned char volatile __data16 SD16INCTL0
+   \                     SD16INCTL0:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0xb7
+   \   unsigned char volatile __data16 SD16AE
+   \                     SD16AE:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x100
+   \   unsigned short volatile __data16 SD16CTL
+   \                     SD16CTL:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x102
+   \   unsigned short volatile __data16 SD16CCTL0
+   \                     SD16CCTL0:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x112
+   \   unsigned short volatile __data16 SD16MEM0
+   \                     SD16MEM0:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x78
+   \   union <unnamed> __data16 _A_USICTL0
+   \                     _A_USICTL0:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x7a
+   \   union <unnamed> __data16 _A_USICKCTL
+   \                     _A_USICKCTL:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x7c
+   \   union <unnamed> __data16 _A_USISRL
+   \                     _A_USISRL:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x120
+   \   unsigned short volatile __data16 WDTCTL
+   \                     WDTCTL:
+   \   000000                DS8 2
+
+   \                                 In segment DATA16_AN, at 0x10f8
+   \   unsigned char const volatile __data16 CALDCO_16MHZ
+   \                     CALDCO_16MHZ:
+   \   000000                DS8 1
+
+   \                                 In segment DATA16_AN, at 0x10f9
+   \   unsigned char const volatile __data16 CALBC1_16MHZ
+   \                     CALBC1_16MHZ:
+   \   000000                DS8 1
+      2          #define J_TYPE 1 
+      3          
+      4          #define RESET_2515  0xc0  // Reset Command byte for MCP 2515 
+      5          #define READ_2515 0x3   // READ command byte for MCP 2515 CAN BUS controller
+      6          #define WRITE_2515 0x2  // Write command byte for mcp 2515 
+      7          #define READ_STAT  0xA0  // Read status command byte ..
+      8          #define RX_STAT_2515    0xB0  // Read reciver status 
+      9          #define RTS_TXb0_2515   0x81  // Request to send for TX buffer 1
+     10          #define RTS_TXb1_2515   0x82  // Request to send for TX buffer 2
+     11          #define RTS_TXb2_2515   0x83  // Request to send for TX buffer 3
+     12          #define LOAD_TXBUF_0_   0x40  // Loading TX Buffer Satrting at at IDH (memmap addr 0x31)
+     13          #define LOAD_TXBUF_0    0x41  // Loading TX Buffer Satrting at at D0  (memMap addr 0x36)
+     14          #define LOAD_TXBUF_1_   0x42  // Loading TX Buffer Satrting at at IDH (memmap addr 0x41)
+     15          #define LOAD_TXBUF_1    0x43  // Loading TX Buffer Satrting at at D0  (memMap addr 0x46)
+     16          #define LOAD_TXBUF_2_   0x44  // Loading TX Buffer Satrting at at IDH (memmap addr 0x51)
+     17          #define LOAD_TXBUF_2    0x45  // Loading TX Buffer Satrting at at D0  (memMap addr 0x56)
+     18          
+     19          #define CAN_INTE     0x2b
+     20          #define CAN_INTF     0x2c
+     21          #define TX_B0_CNTRL  0x30
+     22          #define TX_B0_SIDH   0x31
+     23          #define TX_RTS_CNTRL 0xd
+     24          #define CAN_CNTL     0xf
+     25          #define CAN_STAT     0xe
+     26          #define CNF3         0x28
+     27          #define CNF2         0x29
+     28          #define CNF1         0x2A
+     29          #define EFLG         0x2d
+     30          #define T_EC         0x1c // transmit error counter
+     31          #define R_EC         0x1d // receive error counter
+     32          
+
+   \                                 In segment CODE, align 2
+     33          void 
+     34          SPI_Tx1( unsigned char cmd)
+   \                     SPI_Tx1:
+     35          {
+     36            
+     37                // send the command 
+     38              USISRL = cmd;
+   \   000000   C24C7C00     MOV.B   R12, &0x7c
+     39              USICNT = 8;               // start sending 16 bits -- 8 Bit Mode 
+   \   000004   F2427B00     MOV.B   #0x8, &0x7b
+     40              while(!( USICTL1 & USIIFG)) // poll USI interrupt flag until transmission done 
+   \                     ??SPI_Tx1_0:
+   \   000008   D2B37900     BIT.B   #0x1, &0x79
+   \   00000C   FD2B         JNC     ??SPI_Tx1_0
+     41                ;
+     42          }
+   \   00000E   3041         RET
+     43          
+
+   \                                 In segment CODE, align 2
+     44          void
+     45          SPI_Tx2( unsigned char data1, unsigned char data2)
+   \                     SPI_Tx2:
+     46          {
+     47              //send 2 bytes read one byte
+     48              USISRH = data1 ;             // MSB = 0 == write     14..8 = Command 
+   \   000000   C24C7D00     MOV.B   R12, &0x7d
+     49              USISRL = data2;              // LSB = data to be written 
+   \   000004   C24E7C00     MOV.B   R14, &0x7c
+     50              USICNT = USI16B+16;          // start sending 16 bits -- 16Bit Mode set
+   \   000008   F24050007B00 MOV.B   #0x50, &0x7b
+     51              
+     52              while(!( USICTL1 & USIIFG)) // poll USI interrupt flag until transmission done 
+   \                     ??SPI_Tx2_0:
+   \   00000E   D2B37900     BIT.B   #0x1, &0x79
+   \   000012   FD2B         JNC     ??SPI_Tx2_0
+     53                ;
+     54          }
+   \   000014   3041         RET
+
+   \                                 In segment CODE, align 2, keep-with-next
+     55          void 
+     56          WriteSC( unsigned char commnad)
+   \                     WriteSC:
+     57          {  
+     58            P2OUT &= ~0x40 ;           // set CS active (low) 
+   \   000000   F2C040002900 BIC.B   #0x40, &0x29
+     59            SPI_Tx1( commnad);
+   \   000006                REQUIRE ?Subroutine0
+   \   000006                // Fall through to label ?Subroutine0
+     60            P2OUT |= 0x40;             // CS inactive
+     61          }
+
+   \                                 In segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   B012....     CALL    #SPI_Tx1
+   \   000004   F2D040002900 BIS.B   #0x40, &0x29
+   \   00000A   3041         RET
+
+   \                                 In segment CODE, align 2, keep-with-next
+     62          void 
+     63          WriteSB(unsigned char addr, unsigned char data)
+   \                     WriteSB:
+     64          {
+   \   000000   4F4E         MOV.B   R14, R15
+     65            P2OUT &= ~0x40 ;         
+   \   000002   F2C040002900 BIC.B   #0x40, &0x29
+     66            SPI_Tx2( WRITE_2515,addr);// CANCTRL
+   \   000008   4E4C         MOV.B   R12, R14
+   \   00000A   6C43         MOV.B   #0x2, R12
+   \   00000C   B012....     CALL    #SPI_Tx2
+     67            SPI_Tx1(data);            // Configuration mode ABORT
+   \   000010   4C4F         MOV.B   R15, R12
+   \   000012   3040....     BR      #?Subroutine0
+     68            P2OUT |= 0x40; 
+     69          }
+     70          
+
+   \                                 In segment CODE, align 2
+     71          unsigned char
+     72          ReadSB(unsigned char addr)
+   \                     ReadSB:
+     73          {
+     74            P2OUT &= ~0x40 ;      
+   \   000000   F2C040002900 BIC.B   #0x40, &0x29
+     75            SPI_Tx2(READ_2515,addr);    
+   \   000006   4E4C         MOV.B   R12, R14
+   \   000008   7C400300     MOV.B   #0x3, R12
+   \   00000C   B012....     CALL    #SPI_Tx2
+     76            SPI_Tx1( 0x0);          // clock in 8 bits
+   \   000010   4C43         MOV.B   #0x0, R12
+   \   000012   B012....     CALL    #?Subroutine0
+     77            P2OUT |= 0x40;  
+     78            return USISRL;
+   \                     ??CrossCallReturnLabel_0:
+   \   000016   5C427C00     MOV.B   &0x7c, R12
+   \   00001A   3041         RET
+     79          }
+     80          // Init USI for 16 bit SPI use in master mode. 
+     81          // Interrupts are not used, transmitting code polls the interrupt flag during transmissions.
+     82          // Clock phase is selected so that raising edge is centered in SDO
+     83          // Clock frequency is selected to be 1/2 of SMCLK  -- SMCLK is controlled outside this 
+     84          // function through BCSCTL2 
+     85          
+
+   \                                 In segment CODE, align 2
+     86          void
+     87          SPI_Init( void )  // based on a 16Mhz MCLK and 2Mhz SMCLK !
+   \                     SPI_Init:
+     88          {
+     89            // Universal Serial Interface configuration 
+     90            USICTL0 = USIPE5+USIPE6+USIPE7+USIMST+USISWRST+USIOE ; // PortIOs & USI Master mode, Hold in Reset, Enable IOs 
+   \   000000   F240EB007800 MOV.B   #0xeb, &0x78
+     91            USICTL1 = USICKPH;                              // No  USI interrupts, Set clock phase  
+   \   000006   F24080007900 MOV.B   #0x80, &0x79
+     92            USICKCTL = USIDIV_0+USISSEL_2 ;                 // Setup USI clocks: SCL = SMCLK = 2mHZ
+   \   00000C   F2427A00     MOV.B   #0x8, &0x7a
+     93            USICTL0 &= ~USISWRST;                           // Enable USI
+   \   000010   D2C37800     BIC.B   #0x1, &0x78
+     94            USICTL1 &= ~USIIFG;                             // Clear pending flag
+   \   000014   D2C37900     BIC.B   #0x1, &0x79
+     95            SPI_Tx1(0);                                     // get the interface started -- nobody is listening
+   \   000018   4C43         MOV.B   #0x0, R12
+   \   00001A   3040....     BR      #SPI_Tx1
+     96          }
+     97          
+
+   \                                 In segment CODE, align 2
+     98          void main(void)
+   \                     main:
+     99          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0B12         PUSH.W  R11
+   \   000004   0812         PUSH.W  R8
+    100            WDTCTL = WDT_MDLY_32;                     // WDT Timer interval --  4ms 
+   \   000006   B240185A2001 MOV.W   #0x5a18, &0x120
+    101            IE1 |= WDTIE;                             // Enable WDT interrupt
+   \   00000C   D2D30000     BIS.B   #0x1, &0x0
+    102            P1DIR = 0xff;                            // P1 all to output direction CSn for 2515
+   \   000010   F2432200     MOV.B   #0xff, &0x22
+    103            P1OUT = 0x00;                            // set to
+   \   000014   C2432100     MOV.B   #0x0, &0x21
+    104            P1OUT = 0x0;
+   \   000018   C2432100     MOV.B   #0x0, &0x21
+    105          
+    106            P2SEL = 0;                                // select IO 
+   \   00001C   C2432E00     MOV.B   #0x0, &0x2e
+    107            P2DIR = 0xff;                             // P2 all output
+   \   000020   F2432A00     MOV.B   #0xff, &0x2a
+    108            P2OUT = 0x40;                             // P2.6 high for CSn on 2515
+   \   000024   F24040002900 MOV.B   #0x40, &0x29
+    109          
+    110            SPI_Init();
+   \   00002A   B012....     CALL    #SPI_Init
+    111            
+    112            WriteSC(RESET_2515);   // The reset function takes some time in the chip -- placed here so that it executes before 
+   \   00002E   7C40C000     MOV.B   #0xc0, R12
+   \   000032   B012....     CALL    #WriteSC
+    113                                    // switching the clock to 16Mhz 
+    114             
+    115            // Let the Clock run slow up to here so that the 2515 can initialize first ( 128 clocks at 8mhz)
+    116            DCOCTL = CALDCO_16MHZ;
+   \   000036   D242F8105600 MOV.B   &0x10f8, &0x56
+    117            BCSCTL1 = CALBC1_16MHZ;
+   \   00003C   D242F9105700 MOV.B   &0x10f9, &0x57
+    118            BCSCTL2 = DIVS_3;           // SMCLK = MCKL/8 =~ 2Mhz
+   \   000042   F24006005800 MOV.B   #0x6, &0x58
+    119            
+    120            // set the BAUDrate and Bit-time counters
+    121            // SETUP for BaudRate 250Kbd at 8mhz xtal start addr 0x28 = CNF3
+    122            // TQ = 2*(BRP=1)/FOsc, = 2*(0+1)/8mhz = 250nS. At 16TQ per Bit BAUD = 250Kd
+    123            WriteSB(CNF3,0x87);              // CNF3  CLCKOUT/SOF = SOF, PHSeg2 = 7+1 == 0x87
+   \   000048   3A40....     MOV.W   #WriteSB, R10
+   \   00004C   7E408700     MOV.B   #0x87, R14
+   \   000050   7C402800     MOV.B   #0x28, R12
+   \   000054   8A12         CALL    R10
+    124            WriteSB(CNF2,0xA1);              // CNF2: BLTMODE=1,PHSEG1=4+1, PROPSEG= 1+1;
+   \   000056   7E40A100     MOV.B   #0xa1, R14
+   \   00005A   7C402900     MOV.B   #0x29, R12
+   \   00005E   8A12         CALL    R10
+    125                  WriteSB(CNF1,0x41);              // CNF1: SJW=1 (2TQ),BRP=0 // Slowed down the baudrate to 125kbd
+   \   000060   7E404100     MOV.B   #0x41, R14
+   \   000064   7C402A00     MOV.B   #0x2a, R12
+   \   000068   8A12         CALL    R10
+    126            
+    127           
+    128            WriteSB( CAN_CNTL,0x08);            // Normal mode , ONE-SHOT  mode -- no retries
+   \   00006A   7E42         MOV.B   #0x8, R14
+   \   00006C   7C400F00     MOV.B   #0xf, R12
+   \   000070   8A12         CALL    R10
+    129          
+    130            // prepare a CAN gram 
+    131            P2OUT &= ~0x40 ;       
+   \   000072   F2C040002900 BIC.B   #0x40, &0x29
+    132            SPI_Tx2( WRITE_2515,TX_B0_SIDH);   // Set address for TXbuf0
+   \   000078   3B40....     MOV.W   #SPI_Tx2, R11
+   \   00007C   7E403100     MOV.B   #0x31, R14
+   \   000080   6C43         MOV.B   #0x2, R12
+   \   000082   8B12         CALL    R11
+    133            SPI_Tx2( 0xaa,0xa0);          // SIDH, SIDL
+   \   000084   7840AA00     MOV.B   #0xaa, R8
+   \   000088   7E40A000     MOV.B   #0xa0, R14
+   \   00008C   4C48         MOV.B   R8, R12
+   \   00008E   8B12         CALL    R11
+    134            SPI_Tx2( 0x00,0x00);         // EID8, EID0
+   \   000090   4E43         MOV.B   #0x0, R14
+   \   000092   4C43         MOV.B   #0x0, R12
+   \   000094   8B12         CALL    R11
+    135            SPI_Tx1( 0x0);         // Not RTR, datalength in chars = 0
+   \   000096   4C43         MOV.B   #0x0, R12
+   \   000098   B012....     CALL    #SPI_Tx1
+    136            SPI_Tx2(0xaa,0xaa);        // the data to send  
+   \   00009C   4E48         MOV.B   R8, R14
+   \   00009E   4C48         MOV.B   R8, R12
+   \   0000A0   8B12         CALL    R11
+    137            SPI_Tx2(0xaa,0xaa);        // the data to send 
+   \   0000A2   4E48         MOV.B   R8, R14
+   \   0000A4   4C48         MOV.B   R8, R12
+   \   0000A6   8B12         CALL    R11
+    138            SPI_Tx2(0xaa,0xaa);        // the data to send 
+   \   0000A8   4E48         MOV.B   R8, R14
+   \   0000AA   4C48         MOV.B   R8, R12
+   \   0000AC   8B12         CALL    R11
+    139            P2OUT |= 0x40;    
+   \   0000AE   F2D040002900 BIS.B   #0x40, &0x29
+    140            
+    141            ReadSB(TX_B0_CNTRL);
+   \   0000B4   3B40....     MOV.W   #ReadSB, R11
+   \   0000B8   7C403000     MOV.B   #0x30, R12
+   \   0000BC   8B12         CALL    R11
+    142            WriteSB(CAN_INTF,0);
+   \   0000BE   4E43         MOV.B   #0x0, R14
+   \   0000C0   7C402C00     MOV.B   #0x2c, R12
+   \   0000C4   8A12         CALL    R10
+    143            WriteSB(TX_B0_CNTRL, 0x8);  // or send single byte command code instead 
+   \   0000C6   7E42         MOV.B   #0x8, R14
+   \   0000C8   7C403000     MOV.B   #0x30, R12
+   \   0000CC   8A12         CALL    R10
+    144          
+    145            ReadSB(TX_B0_CNTRL);// x50 = ABTF and TXERR
+   \   0000CE   7C403000     MOV.B   #0x30, R12
+   \   0000D2   8B12         CALL    R11
+    146            ReadSB(CAN_INTF);   // MERRE Message error interrupt = 80 
+   \   0000D4   7C402C00     MOV.B   #0x2c, R12
+   \   0000D8   8B12         CALL    R11
+    147            ReadSB(EFLG);       // 0x15 = TRANSMIT Error passive Flag, TXWARN and EWARN
+   \   0000DA   7C402D00     MOV.B   #0x2d, R12
+   \   0000DE   8B12         CALL    R11
+    148            ReadSB(T_EC);
+   \   0000E0   7C401C00     MOV.B   #0x1c, R12
+   \   0000E4   8B12         CALL    R11
+    149            ReadSB(R_EC);
+   \   0000E6   7C401D00     MOV.B   #0x1d, R12
+   \   0000EA   8B12         CALL    R11
+    150            
+    151            // 1.2V ref, SMCLK
+    152            SD16CTL = SD16REFON +SD16SSEL_1 + SD16DIV_3;        // 1.2V ref, SMCLK,   SMCLK /8
+   \   0000EC   B240D4000001 MOV.W   #0xd4, &0x100
+    153          
+    154            SD16CCTL0 = SD16SNGL + SD16IE + SD16DF ;//  + SD16OSR_512 ;   // Single conv, interrupt -- 2's complement 
+   \   0000F2   B24018040201 MOV.W   #0x418, &0x102
+    155           
+    156            SD16INCTL0 = SD16INCH_6;                  // initial internal temp
+   \   0000F8   F2400600B000 MOV.B   #0x6, &0xb0
+    157           
+    158            _BIS_SR(GIE +LPM0_bits );                 // Enter LPM0 with interrupt
+   \   0000FE   32D01800     BIS.W   #0x18, SR
+    159          }
+   \   000102   3040....     BR      #?Epilogue3
+    160          // Coefficients for inverse polinomial to compute temp from voltage. 
+    161          
+    162          #ifdef J_TYPE
+    163          // temperature  = d_0 + d_1*E  + d_2*E^2 + ... + d_n*E^n 
+    164          // where temp is in deg C, E is in mv
+    165          
+    166          #define N_poly  7
+
+   \                                 In segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    167          float TC_coeff[N_poly+1] = {  0.0, // d0
+   \                     TC_coeff:
+   \   000000                DS8 32
+   \   000020                REQUIRE `?<Initializer for TC_coeff>`
+    168                               1.978425E+01, // d1
+    169                              -2.001204E-01, // d2
+    170                              1.036969E-02 , // d3
+    171                              -2.549687E-04, // d4
+    172                               3.585153E-06, // d5
+    173                              -5.344285E-08, // d6
+    174                               5.099890E-10  // d7
+    175                            };
+    176          #else   // K-Type coeff
+    177          #define N_poly 7
+    178          float TC_coeff[N_poly+1]= {  0.0, // d0
+    179                               2.508355E+1, // d1
+    180                               7.860106E-2, // d2
+    181                              -2.503131E-1, // d3
+    182                               8.315270E-2, // d4
+    183                              -1.228034E-2, // d5
+    184                               9.804036E-4, // d6
+    185                              -4.413030E-5, // d7
+    186                            };
+    187          #endif
+
+   \                                 In segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    188          float TC_Temp;
+   \                     TC_Temp:
+   \   000000                DS8 4
+
+   \                                 In segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    189          float Temp;
+   \                     Temp:
+   \   000000                DS8 4
+
+   \                                 In segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    190          float C_Temp;
+   \                     C_Temp:
+   \   000000                DS8 4
+
+   \                                 In segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    191          float E;
+   \                     E:
+   \   000000                DS8 4
+
+   \                                 In segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    192          int adc;
+   \                     `adc`:
+   \   000000                DS8 2
+    193          
+
+   \                                 In segment CODE, align 2
+    194          float
+    195          pow( float x, int n)
+   \                     pow:
+    196          {
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0B12         PUSH.W  R11
+   \   000004   0812         PUSH.W  R8
+   \   000006   0A4C         MOV.W   R12, R10
+   \   000008   0B4D         MOV.W   R13, R11
+   \   00000A   084E         MOV.W   R14, R8
+    197              float acc = x;
+   \   00000C   043C         JMP     ??pow_1
+    198              
+    199              while(--n )
+    200                acc = acc * x;
+   \                     ??pow_0:
+   \   00000E   0E4A         MOV.W   R10, R14
+   \   000010   0F4B         MOV.W   R11, R15
+   \   000012   B012....     CALL    #_Mul32f
+   \                     ??pow_1:
+   \   000016   3853         ADD.W   #0xffff, R8
+   \   000018   FA23         JNE     ??pow_0
+    201          
+    202              return acc;
+   \   00001A   3040....     BR      #?Epilogue3
+    203          }
+    204          
+    205          #pragma vector=SD16_VECTOR
+
+   \                                 In segment CODE, align 2
+    206          __interrupt void SD16ISR(void)
+   \                     SD16ISR:
+    207          { 
+   \   000000   0A12         PUSH.W  R10
+   \   000002   0B12         PUSH.W  R11
+   \   000004   0812         PUSH.W  R8
+   \   000006   0D12         PUSH.W  R13
+   \   000008   0C12         PUSH.W  R12
+   \   00000A   0F12         PUSH.W  R15
+   \   00000C   0E12         PUSH.W  R14
+    208                /* calc of ADC scale factor for internal temp sensor
+    209                Vtemp = ((int) SD16MEM0 - ADC_offs) * (1.2 / 0xffff)  ;
+    210                Vtemp /= 1.32e-3; // the Temp Coefficient per deg/K
+    211                therefore :
+    212                Vref / maxcount / TempCoeff = ScaleFactor  
+    213                1.2V / 65532    / 1.32e-3   = 13.87183e-3  */
+    214          
+    215              if (SD16INCTL0 == SD16INCH_6 )  // internal Temp sensor -- Cold Junction temp
+   \   00000E   F2900600B000 CMP.B   #0x6, &0xb0
+   \   000014   1F20         JNE     ??SD16ISR_1
+    216              {
+    217                C_Temp =  ((int)SD16MEM0 ) * 13.87183e-3;
+   \   000016   1C421201     MOV.W   &0x112, R12
+   \   00001A   B012....     CALL    #?Subroutine1
+   \                     ??CrossCallReturnLabel_1:
+   \   00001E   3E40AC46     MOV.W   #0x46ac, R14
+   \   000022   3F40633C     MOV.W   #0x3c63, R15
+   \   000026   B012....     CALL    #_Mul32f
+   \   00002A   824C....     MOV.W   R12, &C_Temp
+   \   00002E   824D....     MOV.W   R13, &C_Temp + 2
+    218                // calibration (op-amp) offset is taken out via the number below
+    219                C_Temp -= 268.80;     // convert to deg/C (-273) and  cal out PGA offset 
+   \   000032   3E406666     MOV.W   #0x6666, R14
+   \   000036   3F4086C3     MOV.W   #0xc386, R15
+   \   00003A   B012....     CALL    #_Add32f
+   \   00003E   824C....     MOV.W   R12, &C_Temp
+   \   000042   824D....     MOV.W   R13, &C_Temp + 2
+    220              
+    221                // calc TC cold junction emf equivalent from Vtemp so it can be added to TC voltage
+    222                // not done yet, might not have enough flash to hold an other 5th degree poliniomial and coefficients 
+    223                // so for now, just using the temp and add it to the temp calculated from  the TC -- slight error because 
+    224                // we are not exactly in the right place of the curve 
+    225               
+    226                // differential input on P1.2 / P1.3  
+    227                SD16AE =  SD16AE2 | SD16AE3; // Analog enable for P1.2 and P1.3  
+   \   000046   F2400C00B700 MOV.B   #0xc, &0xb7
+    228                SD16INCTL0 = SD16INCH_1 |SD16GAIN_32;  ; // switch to A1 and gain 32 for next time through 
+   \   00004C   F2402900B000 MOV.B   #0x29, &0xb0
+    229                return;
+   \   000052   4F3C         JMP     ??SD16ISR_2
+    230              }
+    231              // else 
+    232              
+    233              /* calc of ADC scale factor 
+    234               E = ((int) SD16MEM0 - ADC_offs) * (1.2 / 0xffff)  ;  // multiply by bit value 
+    235               E /= 32.00 ;   // divide by gain 
+    236               E *= 1000 ;   // make E in mV   Therefore: ADCcount *  5.722133211e-4; */
+    237              
+    238              // remove offset 
+    239               adc = ((int) SD16MEM0 );
+   \                     ??SD16ISR_1:
+   \   000054   92421201.... MOV.W   &0x112, &`adc`
+    240               adc+=60; //  PGA offset
+   \   00005A   B2503C00.... ADD.W   #0x3c, &`adc`
+    241               E = adc * 5.722133211e-4;
+    242               E *= 1.10; // PGA gain error ? 
+   \   000060   1C42....     MOV.W   &`adc`, R12
+   \   000064   B012....     CALL    #?Subroutine1
+   \                     ??CrossCallReturnLabel_2:
+   \   000068   3E409600     MOV.W   #0x96, R14
+   \   00006C   3F40163A     MOV.W   #0x3a16, R15
+   \   000070   B012....     CALL    #_Mul32f
+   \   000074   3E40CDCC     MOV.W   #0xcccd, R14
+   \   000078   3F408C3F     MOV.W   #0x3f8c, R15
+   \   00007C   B012....     CALL    #_Mul32f
+   \   000080   0A4C         MOV.W   R12, R10
+   \   000082   0B4D         MOV.W   R13, R11
+   \   000084   824C....     MOV.W   R12, &E
+   \   000088   824D....     MOV.W   R13, &E + 2
+    243               TC_Temp =0;
+   \   00008C   8243....     MOV.W   #0x0, &TC_Temp
+   \   000090   8243....     MOV.W   #0x0, &TC_Temp + 2
+    244             
+    245              // temperature  = d_0 + d_1*E  + d_2*E^2 + ... + d_n*E^n 
+    246              //TC_Temp = E * TC_coeff[1];
+    247              //TC_Temp += E*E * TC_coeff[2] ;
+    248              //TC_Temp += E*E*E * TC_coeff[3] ;
+    249              //TC_Temp += E*E*E*E * TC_coeff[4] ;
+    250              //TC_Temp += E*E*E*E*E * TC_coeff[5] ;   // calc to the fifth degree polinomial for J-type
+    251              //TC_Temp += E*E*E*E*E*E * TC_coeff[6] ;
+    252              //TC_Temp += E*E*E*E*E*E*E * TC_coeff[7] ; 
+    253              
+    254              for (int i = 1; i <= N_poly; i++ )
+   \   000094   1843         MOV.W   #0x1, R8
+    255              {
+    256                TC_Temp += pow(E,i) * TC_coeff[i];
+   \                     ??SD16ISR_0:
+   \   000096   0E48         MOV.W   R8, R14
+   \   000098   0C4A         MOV.W   R10, R12
+   \   00009A   0D4B         MOV.W   R11, R13
+   \   00009C   B012....     CALL    #pow
+   \   0000A0   0F48         MOV.W   R8, R15
+   \   0000A2   0F5F         RLA.W   R15
+   \   0000A4   0F5F         RLA.W   R15
+   \   0000A6   1E4F....     MOV.W   TC_coeff(R15), R14
+   \   0000AA   1F4F....     MOV.W   TC_coeff + 2(R15), R15
+   \   0000AE   B012....     CALL    #_Mul32f
+   \   0000B2   0E4C         MOV.W   R12, R14
+   \   0000B4   0F4D         MOV.W   R13, R15
+   \   0000B6   1C42....     MOV.W   &TC_Temp, R12
+   \   0000BA   1D42....     MOV.W   &TC_Temp + 2, R13
+   \   0000BE   B012....     CALL    #_Add32f
+   \   0000C2   824C....     MOV.W   R12, &TC_Temp
+   \   0000C6   824D....     MOV.W   R13, &TC_Temp + 2
+    257              }
+   \   0000CA   1853         ADD.W   #0x1, R8
+   \   0000CC   3892         CMP.W   #0x8, R8
+   \   0000CE   E33B         JL      ??SD16ISR_0
+    258              
+    259              Temp = C_Temp + TC_Temp;
+   \   0000D0   0E4C         MOV.W   R12, R14
+   \   0000D2   0F4D         MOV.W   R13, R15
+   \   0000D4   1C42....     MOV.W   &C_Temp, R12
+   \   0000D8   1D42....     MOV.W   &C_Temp + 2, R13
+   \   0000DC   B012....     CALL    #_Add32f
+   \   0000E0   824C....     MOV.W   R12, &Temp
+   \   0000E4   824D....     MOV.W   R13, &Temp + 2
+    260              
+    261              SD16INCTL0 = SD16INCH_6; // ADC input -- go back to measure internal temp again 
+   \   0000E8   F2400600B000 MOV.B   #0x6, &0xb0
+    262              SD16AE = 0;              // remove Analog input enable for P1.2 and P1.3 -- makes internal temp meas unstable 
+   \   0000EE   C243B700     MOV.B   #0x0, &0xb7
+    263          
+    264          }
+   \                     ??SD16ISR_2:
+   \   0000F2   3E41         POP.W   R14
+   \   0000F4   3F41         POP.W   R15
+   \   0000F6   3C41         POP.W   R12
+   \   0000F8   3D41         POP.W   R13
+   \   0000FA   3841         POP.W   R8
+   \   0000FC   3B41         POP.W   R11
+   \   0000FE   3A41         POP.W   R10
+   \   000100   0013         RETI
+
+   \                                 In segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   0D4C         MOV.W   R12, R13
+   \   000002   3DE3         XOR.W   #0xffff, R13
+   \   000004   0D5D         RLA.W   R13
+   \   000006   0D7D         SUBC.W  R13, R13
+   \   000008   3040....     BR      #_Cast32sto32f
+    265          
+    266          // Watchdog Timer interrupt service routine
+    267          #pragma vector=WDT_VECTOR
+
+   \                                 In segment CODE, align 2
+    268          __interrupt void watchdog_timer(void)
+   \                     watchdog_timer:
+    269          {
+    270            SD16CCTL0 |= SD16SC;                      // Start SD16 conversion
+   \   000000   A2D30201     BIS.W   #0x2, &0x102
+    271          }
+   \   000004   0013         RETI
+
+   \                                 In segment INTVEC, offset 0xa, root
+   \                     `??SD16ISR??INTVEC 10`:
+   \   00000A   ....         DC16    SD16ISR
+
+   \                                 In segment INTVEC, offset 0x14, root
+   \                     `??watchdog_timer??INTVEC 20`:
+   \   000014   ....         DC16    watchdog_timer
+
+   \                                 In segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for TC_coeff>`:
+   \   000000   000000002546 DC32 0H, 419E4625H, 0BE4CEC5DH, 3C29E5A2H, 0B985AD52H, 36709876H
+   \            9E415DEC4CBE
+   \            A2E5293C52AD
+   \            85B976987036
+   \   000018   098965B3492F DC32 0B3658909H, 300C2F49H
+   \            0C30        
+    272           
+    273          
+
+   Maximum stack usage in bytes:
+
+     Function           CSTACK
+     --------           ------
+     ReadSB                 2
+       -> SPI_Tx2           2
+       -> SPI_Tx1           2
+     SD16ISR               18
+       -> _Cast32sto32f    18
+       -> _Mul32f          18
+       -> _Add32f          18
+       -> _Cast32sto32f    18
+       -> _Mul32f          18
+       -> _Mul32f          18
+       -> pow              18
+       -> _Mul32f          18
+       -> _Add32f          18
+       -> _Add32f          18
+     SPI_Init               2
+       -> SPI_Tx1           2
+     SPI_Tx1                2
+     SPI_Tx2                2
+     WriteSB                2
+       -> SPI_Tx2           2
+       -> SPI_Tx1           2
+     WriteSC                2
+       -> SPI_Tx1           2
+     main                   8
+       -> SPI_Init          8
+       -> WriteSC           8
+       -> WriteSB           8
+       -> WriteSB           8
+       -> WriteSB           8
+       -> WriteSB           8
+       -> SPI_Tx2           8
+       -> SPI_Tx2           8
+       -> SPI_Tx2           8
+       -> SPI_Tx1           8
+       -> SPI_Tx2           8
+       -> SPI_Tx2           8
+       -> SPI_Tx2           8
+       -> ReadSB            8
+       -> WriteSB           8
+       -> WriteSB           8
+       -> ReadSB            8
+       -> ReadSB            8
+       -> ReadSB            8
+       -> ReadSB            8
+       -> ReadSB            8
+     pow                    8
+       -> _Mul32f           8
+     watchdog_timer         4
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     IE1                            1
+     DCOCTL                         1
+     BCSCTL1                        1
+     BCSCTL2                        1
+     P1OUT                          1
+     P1DIR                          1
+     P2OUT                          1
+     P2DIR                          1
+     P2SEL                          1
+     SD16INCTL0                     1
+     SD16AE                         1
+     SD16CTL                        2
+     SD16CCTL0                      2
+     SD16MEM0                       2
+     _A_USICTL0                     2
+     _A_USICKCTL                    2
+     _A_USISRL                      2
+     WDTCTL                         2
+     CALDCO_16MHZ                   1
+     CALBC1_16MHZ                   1
+     SPI_Tx1                       16
+     SPI_Tx2                       22
+     WriteSC                        6
+     ?Subroutine0                  12
+     WriteSB                       22
+     ReadSB                        28
+     SPI_Init                      30
+     main                         262
+     TC_coeff                      32
+     TC_Temp                        4
+     Temp                           4
+     C_Temp                         4
+     E                              4
+     adc                            2
+     pow                           30
+     SD16ISR                      258
+     ?Subroutine1                  12
+     watchdog_timer                 6
+     ??SD16ISR??INTVEC 10           2
+     ??watchdog_timer??INTVEC 20    2
+     ?<Initializer for TC_coeff>   32
+
+ 
+ 704 bytes in segment CODE
+  27 bytes in segment DATA16_AN
+  32 bytes in segment DATA16_I
+  32 bytes in segment DATA16_ID
+  18 bytes in segment DATA16_Z
+   4 bytes in segment INTVEC
+ 
+ 704 bytes of CODE  memory
+  32 bytes of CONST memory (+  4 bytes shared)
+  50 bytes of DATA  memory (+ 27 bytes shared)
+
+Errors: none
+Warnings: none

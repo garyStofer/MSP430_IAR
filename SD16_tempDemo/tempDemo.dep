@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\msp430x20x3_sd16A_02.c</file>
+      <file>$PROJ_DIR$\Debug\List\Temp.lst</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl430f.r43</file>
+      <file>$PROJ_DIR$\Debug\Exe\tempDemo.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Temp.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Temp.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430x20x3_sd16A_02.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430x20x3_sd16A_02.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430x20x3.h</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F2013.xcl</file>
+      <file>$PROJ_DIR$\Debug\List\msp430x20x3_sd16A_02.lst</file>
+      <file>$PROJ_DIR$\Debug\List\tempDemo.map</file>
+      <file>$PROJ_DIR$\Temp.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\tempDemo.pbd</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\msp430x20x3_sd16A_02.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 9 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 7 2</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 10 7 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\tempDemo.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 11 6 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 13 4</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Temp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 6 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 7 2</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 10 7 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\tempDemo.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 5</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

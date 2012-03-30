@@ -1,0 +1,328 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.59Y/386                                         #
+#                                                                              #
+#           Link time     =  22/Dec/2006  22:45:35                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  C:\iarprojects\SD16_tempDemo\Debug\List\tempDemo. #
+#                            map                                               #
+#           Output file 1 =  C:\iarprojects\SD16_tempDemo\Debug\Exe\tempDemo.d #
+#                            43                                                #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#                            Using library modules for C-SPY (-r)              #
+#           Command line  =  C:\iarprojects\SD16_tempDemo\Debug\Obj\Temp.r43   #
+#                            -o                                                #
+#                            C:\iarprojects\SD16_tempDemo\Debug\Exe\tempDemo.d #
+#                            43                                                #
+#                            -l                                                #
+#                            C:\iarprojects\SD16_tempDemo\Debug\List\tempDemo. #
+#                            map                                               #
+#                            -xsno                                             #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0\430\LIB\"                                   #
+#                            -f                                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\CONFIG\lnk430F2013.xcl"                   #
+#                            (-cmsp430                                         #
+#                            -Z(DATA)DATA16_I,DATA16_Z,DATA16_N,HEAP+_HEAP_SIZ #
+#                            E=0200-027F                                       #
+#                            -Z(DATA)CSTACK+_STACK_SIZE#                       #
+#                            -Z(CODE)INFO=1000-10FF -Z(CODE)INFOA=10C0-10FF    #
+#                            -Z(CODE)INFOB=1080-10BF -Z(CODE)INFOC=1040-107F   #
+#                            -Z(CODE)INFOD=1000-103F                           #
+#                            -Z(CODE)CSTART=F800-FFDF -Z(CODE)CODE=F800-FFDF   #
+#                            -Z(CONST)DATA16_C,DATA16_ID,DIFUNCT,CHECKSUM=F800 #
+#                            -FFDF                                             #
+#                            -Z(CONST)INTVEC=FFE0-FFFF                         #
+#                            -Z(CONST)RESET=FFFE-FFFF) -D_STACK_SIZE=32 -r     #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\LIB\CLIB\cl430f.r43"                      #
+#                            -e_small_write=_formatted_write -D_HEAP_SIZE=0    #
+#                            -s __program_start                                #
+#                                                                              #
+#                        Copyright 1987-2006 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           F806  Relocatable, from module : ?cstart
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __core        = 64kb
+  __double_size = 32
+  __pic         = no
+  __reg_r4      = free
+  __reg_r5      = free
+  __rt_version  = 2
+
+
+
+                ****************************************
+                *                                      *
+                *            MODULE SUMMARY            *
+                *                                      *
+                ****************************************
+
+Module               CODE      DATA      CONST
+------               ----      ----      -----
+                    (Rel)  (Rel)  (Abs)  (Rel)
+?Cast32f32i           146
+?Epilogue              18
+?__exit                 2
+?_exit                  4
+?clibexit               4
+?cstart                42
+?memcpy                28
+?memzero               30
+?reset_vector                                2
+Temp                  704     50     27     32
+  + common                                  22
+_Add32f               354
+_Mul32f               272
+N/A (command line)            50
+----------          -----    ---     --     --
+Total:              1 604    100     27     34
+  + common                                  22
+
+
+                ****************************************
+                *                                      *
+                *              CALL GRAPH              *
+                *                                      *
+                ****************************************
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK
+    | Stack used (prev) :  00000000
+  02    pow
+        | Stack used (prev) :  00000000
+        | + function block  :  00000008
+  01  SD16ISR
+      | Stack used (prev) :  00000008
+      | + function block  :  00000012
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000001A
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK
+    | Stack used (prev) :  0000001A
+  01  watchdog_timer
+      | Stack used (prev) :  0000001A
+      | + function block  :  00000004
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000001E
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK
+    | Stack used (prev) :  0000001E
+  03      SPI_Tx1
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+  02    SPI_Init
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+  03      SPI_Tx2
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+  03      SPI_Tx1
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+          |  Already listed
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    ReadSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  03      SPI_Tx1
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+          |  Already listed
+  02    WriteSC
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+  03      SPI_Tx2
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+          |  Already listed
+  03      SPI_Tx1
+          | Stack used (prev) :  0000001E
+          | + function block  :  00000002
+          |  Already listed
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    WriteSB
+        | Stack used (prev) :  00000020
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx2
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  02    SPI_Tx1
+        | Stack used (prev) :  0000001E
+        | + function block  :  00000002
+        |  Already listed
+  01  main
+      | Stack used (prev) :  00000022
+      | + function block  :  00000008
+  <-Sub-tree of type: Function tree
+    | Stack used          :  0000002A
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK
+    | Stack used (prev) :  0000002A
+  01  exit
+      | Stack used (prev) :  0000002A
+      | + function block  :  00000002
+  <-Sub-tree of type: Function tree
+    | Stack used          :  0000002C
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK
+    | Stack used (prev) :  0000002C
+  01  __data16_memzero
+      | Stack used (prev) :  0000002C
+      | + function block  :  00000002
+  <-Sub-tree of type: Function tree
+    | Stack used          :  0000002E
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK
+    | Stack used (prev) :  0000002E
+  02    memcpy
+        | Stack used (prev) :  0000002E
+        | + function block  :  00000004
+  01  __data16_memcpy
+      | Stack used (prev) :  00000032
+      | + function block  :  00000004
+  <-Sub-tree of type: Function tree
+    | Stack used          :  00000036
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+DATA16_AN                              0000 - 0000               1   rel    0
+                                       0021 - 0022               2 
+                                       0029 - 002A               2 
+                                       002E - 002E               1 
+                                       0056 - 0058               3 
+                                       0078 - 007D               6 
+                                       00B0 - 00B0               1 
+                                       00B7 - 00B7               1 
+                                       0100 - 0103               4 
+                                       0112 - 0113               2 
+                                       0120 - 0121               2 
+DATA16_I                               0200 - 021F              20   rel    1
+DATA16_Z                               0220 - 0231              12   rel    1
+CSTACK                                 024E - 027F              32   rel    1
+DATA16_AN                              10F8 - 10F9               2   rel    0
+CSTART                                 F800 - F82F              30   rel    1
+CODE                                   F830 - FE43             614   rel    1
+DATA16_C                                  FE44                       dse    0
+DATA16_ID                              FE44 - FE63              20   rel    1
+INTVEC                                 FFE0 - FFF5              16   com    1
+RESET                                  FFFE - FFFF               2   rel    1
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 1 604 bytes of CODE  memory
+   100 bytes of DATA  memory (+ 27 absolute )
+    56 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

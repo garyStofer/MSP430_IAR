@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>FuelSensor/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>393</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      <PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Workspace>
+      <Debug-Log/>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build><TerminalIO/><Profiling/><Breakpoints/><Find-in-Files><ColumnWidth0>561</ColumnWidth0><ColumnWidth1>80</ColumnWidth1><ColumnWidth2>961</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-30670-4298</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-247-21243</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-3174-18382</Identity><TabName>Breakpoints</TabName><Factory>Breakpoints</Factory><Session/></Tab><Tab><Identity>TabID-11835-20334</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>3</SelectedTab></Wnd0><Wnd1><Tabs><Tab><Identity>TabID-21362-9594</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>FuelSensor</ExpandedNode><ExpandedNode>FuelSensor/FuelSensor.c</ExpandedNode><ExpandedNode>FuelSensor/Output</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\MSP430_IAR_Projects\ResistiveFuelSensor\FuelSensor.c</Filename><XPos>0</XPos><YPos>105</YPos><SelStart>5331</SelStart><SelEnd>5334</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\INC\msp430x20x3.h</Filename><XPos>0</XPos><YPos>555</YPos><SelStart>2361</SelStart><SelEnd>2361</SelEnd></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01344af0><key>iaridepm.enu1</key></Toolbar-01344af0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>834</Bottom><Right>467</Right><x>-2</x><y>-2</y><xscreen>-3489660</xscreen><yscreen>-1949914</yscreen><sizeHorzCX>-2147483076</sizeHorzCX><sizeHorzCY>-2147482378</sizeHorzCY><sizeVertCX>288615</sizeVertCX><sizeVertCY>920705</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>30</Bottom><Right>1627</Right><x>-2</x><y>-2</y><xscreen>1629</xscreen><yscreen>-1949914</yscreen><sizeHorzCX>1002462</sizeHorzCX><sizeHorzCY>-2147482378</sizeHorzCY><sizeVertCX>-2147483076</sizeVertCX><sizeVertCY>-2147482378</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log/>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>206</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovEnabled>0</CodeCovEnabled><CodeCovShow>0</CodeCovShow></Disassembly>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>820</ColumnWidth1><ColumnWidth2>218</ColumnWidth2><ColumnWidth3>54</ColumnWidth3></Build>
+    </Static>
+    <Windows>
+      
+      
+      
+    <Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-32282-4557</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-31759-4567</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-10262-4560</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>BlinkyHello</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-21011-4564</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane/><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-013fb000><key>430fet1</key></Toolbar-013fb000></Sizes></Row0><Row1><Sizes><Toolbar-01344680><key>iaridepm.enu1</key></Toolbar-01344680></Sizes></Row1><Row2><Sizes><Toolbar-013db100><key>debuggergui.enu1</key></Toolbar-013db100></Sizes></Row2></Top><Left><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>561</Bottom><Right>280</Right><x>-2</x><y>-2</y><xscreen>282</xscreen><yscreen>257</yscreen><sizeHorzCX>173538</sizeHorzCX><sizeHorzCY>283040</sizeHorzCY><sizeVertCX>173538</sizeVertCX><sizeVertCY>620044</sizeVertCY></Rect></Wnd4></Sizes></Row0></Left><Right><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>561</Bottom><Right>280</Right><x>-2</x><y>-2</y><xscreen>282</xscreen><yscreen>257</yscreen><sizeHorzCX>173538</sizeHorzCX><sizeHorzCY>283040</sizeHorzCY><sizeVertCX>173538</sizeVertCX><sizeVertCY>620044</sizeVertCY></Rect></Wnd5></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>255</Bottom><Right>1627</Right><x>-2</x><y>-2</y><xscreen>1629</xscreen><yscreen>257</yscreen><sizeHorzCX>1002462</sizeHorzCX><sizeHorzCY>283040</sizeHorzCY><sizeVertCX>173538</sizeVertCX><sizeVertCY>283040</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

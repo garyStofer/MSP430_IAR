@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+    
+    
+  <CurrentConfigs><Project>Access Point/Debug</Project><Project>End Device/Debug</Project></CurrentConfigs><CurrentProj>End Device</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>229</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1174</ColumnWidth1><ColumnWidth2>313</ColumnWidth2><ColumnWidth3>78</ColumnWidth3></Build>
+      <TerminalIO/>
+    </Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-21576-8237</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>&lt;ws></ExpandedNode><ExpandedNode>&lt;ws>/Access Point</ExpandedNode><ExpandedNode>&lt;ws>/Access Point/Application</ExpandedNode><ExpandedNode>&lt;ws>/End Device</ExpandedNode><ExpandedNode>&lt;ws>/End Device/Application</ExpandedNode><ExpandedNode>&lt;ws>/End Device/Components</ExpandedNode><ExpandedNode>&lt;ws>/End Device/Configuration</ExpandedNode><ExpandedNode>&lt;ws>/End Device/Output</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-13211-8394</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\MSP430_IAR_Projects\eZ430-RF2500 Wireless Sensor Monitor (IAR Source) v1.02\demo_AP.c</Filename><XPos>0</XPos><YPos>91</YPos><SelStart>5388</SelStart><SelEnd>5388</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\MSP430_IAR_Projects\eZ430-RF2500 Wireless Sensor Monitor (IAR Source) v1.02\demo_ED.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01344ce8><key>iaridepm.enu1</key></Toolbar-01344ce8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>666</Bottom><Right>303</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>123077</sizeHorzCX><sizeHorzCY>220264</sizeHorzCY><sizeVertCX>187692</sizeVertCX><sizeVertCY>735683</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1627</Right><x>-2</x><y>-2</y><xscreen>1629</xscreen><yscreen>200</yscreen><sizeHorzCX>1002462</sizeHorzCX><sizeHorzCY>220264</sizeHorzCY><sizeVertCX>123077</sizeVertCX><sizeVertCY>220264</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,225 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.59Y/386                                         #
+#                                                                              #
+#           Link time     =  17/Sep/2007  15:19:16                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  C:\iarprojects\FuelSensor\Debug\List\FuelSensor.m #
+#                            ap                                                #
+#           Output file 1 =  C:\iarprojects\FuelSensor\Debug\Exe\FuelSensor.d4 #
+#                            3                                                 #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#                            Using library modules for C-SPY (-rt)             #
+#           Command line  =  C:\iarprojects\FuelSensor\Debug\Obj\FuelSensor.r4 #
+#                            3                                                 #
+#                            -o                                                #
+#                            C:\iarprojects\FuelSensor\Debug\Exe\FuelSensor.d4 #
+#                            3                                                 #
+#                            -l                                                #
+#                            C:\iarprojects\FuelSensor\Debug\List\FuelSensor.m #
+#                            ap                                                #
+#                            -xen                                              #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0\430\LIB\"                                   #
+#                            -f                                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\CONFIG\lnk430F2013.xcl"                   #
+#                            (-cmsp430                                         #
+#                            -Z(DATA)DATA16_I,DATA16_Z,DATA16_N,HEAP+_HEAP_SIZ #
+#                            E=0200-027F                                       #
+#                            -Z(DATA)CSTACK+_STACK_SIZE#                       #
+#                            -Z(CODE)INFO=1000-10FF -Z(CODE)INFOA=10C0-10FF    #
+#                            -Z(CODE)INFOB=1080-10BF -Z(CODE)INFOC=1040-107F   #
+#                            -Z(CODE)INFOD=1000-103F                           #
+#                            -Z(CODE)CSTART=F800-FFDF -Z(CODE)CODE=F800-FFDF   #
+#                            -Z(CONST)DATA16_C,DATA16_ID,DIFUNCT,CHECKSUM=F800 #
+#                            -FFDF                                             #
+#                            -Z(CONST)INTVEC=FFE0-FFFF                         #
+#                            -Z(CONST)RESET=FFFE-FFFF) -D_STACK_SIZE=32 -rt    #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\LIB\CLIB\cl430f.r43"                      #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_medium_read=_formatted_read -D_HEAP_SIZE=0     #
+#                            -s __program_start                                #
+#                                                                              #
+#                        Copyright 1987-2006 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           F806  Relocatable, from module : ?cstart
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __core        = 64kb
+  __double_size = 32
+  __pic         = no
+  __reg_r4      = free
+  __reg_r5      = free
+  __rt_version  = 2
+
+                ****************************************
+                *                                      *
+                *              ENTRY LIST              *
+                *                                      *
+                ****************************************
+
+?FILLER_BYTES
+?ABS_ENTRY_MOD
+  _HEAP_SIZE                                 0000 
+  _STACK_SIZE                                0032 
+FuelSensor ( C:\iarprojects\FuelSensor\Debug\Obj\FuelSensor.r43 )
+  IE1                                        0000 
+  DCOCTL                                     0056 
+  BCSCTL1                                    0057 
+  BCSCTL2                                    0058 
+  BCSCTL3                                    0053 
+  P1OUT                                      0021 
+  P1DIR                                      0022 
+  P1IFG                                      0023 
+  P1IES                                      0024 
+  P1IE                                       0025 
+  P1SEL                                      0026 
+  P1REN                                      0027 
+  P2OUT                                      0029 
+  P2DIR                                      002A 
+  P2IE                                       002D 
+  P2SEL                                      002E 
+  SD16INCTL0                                 00B0 
+  SD16AE                                     00B7 
+  SD16CTL                                    0100 
+  SD16CCTL0                                  0102 
+  SD16MEM0                                   0112 
+  TACTL                                      0160 
+  TACCTL0                                    0162 
+  TACCTL1                                    0164 
+  TACCR0                                     0172 
+  TACCR1                                     0174 
+  WDTCTL                                     0120 
+  CALDCO_16MHZ                               10F8 
+  CALBC1_16MHZ                               10F9 
+  isr_cnt                                    0200 
+  F_Osc                                      0202 
+  SD16ISR                                    F81E 
+  port1_ISR                                  F82A 
+  wdt_ISR                                    F834 
+  Read_ADC                                   F840 
+  init                                       F852 
+  Delta_F                                    0204 
+  tacc1_tmp                                  0206 
+  x                                          0208 
+  main                                       F8E2 
+  port1_ISR::??INTVEC 4                      FFE4 
+  SD16ISR::??INTVEC 10                       FFEA 
+  wdt_ISR::??INTVEC 20                       FFF4 
+  ?Subroutine2                               F822   LOCAL
+  ?Subroutine1                               FA6A   LOCAL
+  ?Subroutine0                               FA74   LOCAL
+  main::V_bat                                020C   LOCAL
+?_exit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _exit                                      F800 
+?clibexit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  exit                                       FA7A 
+?clibstubs ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?__exit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  __exit                                     F804 
+  ?C_EXIT                                    F804 
+?reset_vector ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?reset_vector                              FFFE 
+?cstart ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  __program_start                            F806 
+  ?cstart_begin                              F806 
+  ?cstart_init_zero                          F80A 
+  ?cstart_call_main                          F816 
+  ?cstart_end                                F81E 
+lowinit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?Epilogue ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?Cast32f32i ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _Cast32sto32f                              FA7E 
+  _Cast32uto32f                              FA92 
+_Cast32fto32u ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _Cast32fto32u                              FB10 
+?FLT_Extract ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?FLT_Extract                               FB1C 
+_Mul32f ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _Mul32f                                    FB68 
+_Div32f ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _Div32f                                    FC78 
+_Add32f ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _Add32f                                    FDAC 
+  _Sub32f                                    FDA8 
+?Mul32 ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?Mul32                                     FF0A 
+?DivMod32u ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?DivMod32u                                 FF3A 
+?DivMod32s ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?DivMod32s                                 FF72 
+?memcpy ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?memmove ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?memzero ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  __data16_memzero                           FFB2 
+?setjmp ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?longjmp ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+
+
+
+                ****************************************
+                *                                      *
+                *            MODULE SUMMARY            *
+                *                                      *
+                ****************************************
+
+Module               CODE      DATA      CONST
+------               ----      ----      -----
+                    (Rel)  (Rel)  (Abs)  (Rel)
+?Cast32f32i           146
+?DivMod32s             64
+?DivMod32u             56
+?FLT_Extract           76
+?Mul32                 48
+?__exit                 2
+?_exit                  4
+?clibexit               4
+?cstart                24
+?memzero               18
+?reset_vector                                2
+FuelSensor            604     16     38
+  + common                                  22
+_Add32f               354
+_Cast32fto32u          12
+_Div32f               304
+_Mul32f               272
+N/A (command line)            50
+----------          -----     --     --     --
+Total:              1 988     66     38      2
+  + common                                  22
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 1 988 bytes of CODE  memory
+    66 bytes of DATA  memory (+ 38 absolute )
+    24 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

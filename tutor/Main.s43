@@ -1,0 +1,27 @@
+/**************************************************
+ *
+ * IAR EMBEDDED WORKBENCH TUTORIAL
+ * Assembler and library tutorial main program.
+ *
+ * Copyright 1996-2004 IAR Systems. All rights reserved.
+ *
+ * $Revision: 1.5 $
+ *
+ **************************************************/
+
+        NAME    main
+
+        PUBLIC  main
+        EXTERN  r_shift
+        
+        ORG     0FFFEh
+        DW      main
+
+        RSEG    CODE
+main    MOV     #0x400,SP
+        MOV     #H'ABCD,R4
+        MOV     #4,R5
+        CALL    #r_shift
+done_it JMP     done_it
+
+        END     main

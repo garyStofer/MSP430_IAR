@@ -1,0 +1,245 @@
+##############################################################################
+#                                                                            #
+# IAR MSP430 C/C++ Compiler V3.41A/W32  [Kickstart]    06/May/2007  11:12:47 #
+# Copyright 1996-2006 IAR Systems. All rights reserved.                      #
+#                                                                            #
+#    __rt_version  =  2                                                      #
+#    __double_size =  32                                                     #
+#    __reg_r4      =  free                                                   #
+#    __reg_r5      =  free                                                   #
+#    __pic         =  no                                                     #
+#    __core        =  64kb                                                   #
+#    Source file   =  C:\iarprojects\eZxmit\SD16_IrTx.c                      #
+#    Command line  =  C:\iarprojects\eZxmit\SD16_IrTx.c -lCN                 #
+#                     C:\iarprojects\eZxmit\Debug\List\ -la                  #
+#                     C:\iarprojects\eZxmit\Debug\List\ -o                   #
+#                     C:\iarprojects\eZxmit\Debug\Obj\ -z3 --no_cse          #
+#                     --no_unroll --no_inline --no_code_motion --no_tbaa     #
+#                     --debug -e --double=32 -I "C:\Program Files\IAR        #
+#                     Systems\Embedded Workbench 4.0\430\INC\" -I            #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench       #
+#                     4.0\430\INC\CLIB\"                                     #
+#    List file     =  C:\iarprojects\eZxmit\Debug\List\SD16_IrTx.lst         #
+#    Object file   =  C:\iarprojects\eZxmit\Debug\Obj\SD16_IrTx.r43          #
+#                                                                            #
+#                                                                            #
+##############################################################################
+
+C:\iarprojects\eZxmit\SD16_IrTx.c
+      1          // --------- Part 1 ---------------------------
+      2          
+      3          #include <msp430x20x3.h>
+      4          DEFC (SDA2_BUG_FIX, 0xBF)
+      5          
+      6          // F2013 revision B is used
+      7          // For silicon revision C or later
+      8          //    comment out the next line
+      9          #define HAS_SDA2_BUG
+     10          
+     11          // When BCL9 bug is fixed by TI
+     12          //    comment out the next line
+     13          #define HAS_BCL9_BUG
+     14          
+     15          //      MSP430F2013
+     16          //    ---------------
+     17          //   |               |
+     18          //   |          P2.6 |---->|----^^^^---Gnd
+     19          //   |      (or P1.2)|  IR-LED  330R
+     20          //   |      (or P1.6)|
+     21          //   |               |   100nF (optional)
+     22          //   |          P1.3 |----||----Gnd
+     23          //   |         (Vref)|
+     24          
+     25          // Use one of the three options for IR Tx
+     26          //    comment out 2 of the 3 lines below
+     27          #define IR_TX_IS_P26
+     28          //#define IR_TX_IS_P12
+     29          //#define IR_TX_IS_P16
+     30          
+     31          // If the optional external Vref cap is not
+     32          //    used, comment out the next line
+     33          #define HAS_VREF_CAP
+     34          
+     35          // --------- Part 2 ---------------------------
+     36          
+     37          // # of SMCLK for each bit at 9600b/s
+     38          #define BIT_CLKS (104)
+     39          // # of SMCLK for each IR pulse
+     40          #define PULSE_CLKS (2)
+     41          
+     42          // Global variable, visible to ISR
+     43          __no_init int IR_tmp;
+     44          
+     45          void IR_Tx(char dat8)
+     46          // Transmit IR at 9600b/s
+     47          // First xmit a "start bit"
+     48          // Followed by 8 bits of <dat8>
+     49          //    LSB first, MSB last
+     50          // End with inactive IR ("stop bit")
+     51          {
+     52            IR_tmp = dat8 | 0x0300;
+     53            TACCR0 = BIT_CLKS-1;
+     54            TACCTL0 = CCIE;
+     55            TACCR1 = BIT_CLKS-PULSE_CLKS;
+     56            TACCTL1 = OUTMOD_3;    // set-reset mode
+     57            TACTL = TASSEL_2|MC_1|TACLR;
+     58            _BIS_SR(LPM0_bits|GIE);// let ISR do the rest
+     59            TACTL = 0;
+     60            TACCTL0 = 0;
+     61            TACCTL1 = 0;
+     62          }
+     63          
+     64          #pragma vector=TIMERA0_VECTOR
+     65          __interrupt void IR_ISR (void)
+     66          // Timer A0 ISR for IR_Tx()
+     67          {
+     68            if (IR_tmp&BIT0)
+     69              TACCTL1 = OUTMOD_5;  // reset mode
+     70            else
+     71              TACCTL1 = OUTMOD_3;  // set-reset mode
+     72            if ((IR_tmp = IR_tmp>>1)==0)
+     73              _BIC_SR_IRQ(LPM0_bits|GIE);
+     74          }
+     75          
+     76          // --------- Part 3 ---------------------------
+     77          
+     78          void IR_Packet(char n, int dat16[])
+     79          // Transmit n words of dat16[] via IR packet
+     80          // The packet consists of:
+     81          //  0xC0 (BOF)
+     82          //  [4 x n] nibbles of data
+     83          //  XOR-sum of the above [4 x n ] nibbles
+     84          //  0xC1 (EOF)
+     85          // Each 16-bit word of dat16[] is chopped
+     86          //  into 4 nibbles (LSB first MSB last) and
+     87          //  padded with 0xF0 before transmitted
+     88          {
+     89            char i, j, d, s;
+     90            IR_Tx(0xC0);           // BOF
+     91            s = 0;
+     92            for (i=0; i<n; i++)
+     93            {
+     94              for (j=0; j<4; j++)
+     95              {
+     96                d = dat16[i]&0x0F;
+     97                s ^= d;
+     98                IR_Tx(d|0xF0);     // data nibble + 0xF0
+     99                dat16[i] = dat16[i]>>4;
+    100              }
+    101            }
+    102            IR_Tx(s|0xF0);         // XOR-sum
+    103            IR_Tx(0xC1);           // EOF
+    104          }
+    105          
+    106          // --------- Part 4 ---------------------------
+    107          
+    108          int Get_Sd16(int inctl0)
+    109          {
+    110            SD16CTL = SD16REFON|SD16SSEL_1;
+    111            SD16INCTL0 = inctl0;
+    112            SD16CCTL0 = SD16OSR_1024 |
+    113                        SD16SNGL|SD16DF|SD16IE|SD16SC;
+    114            _BIS_SR(LPM0_bits|GIE);
+    115            return (SD16MEM0);
+    116          }
+    117          
+    118          #pragma vector = SD16_VECTOR
+    119          __interrupt void SD16ISR(void)
+    120          {
+    121            _BIC_SR_IRQ(LPM0_bits|GIE);
+    122          }
+    123          
+    124          // --------- Part 5 ---------------------------
+    125          
+    126          void init(void)
+    127          // Set ACLK = VLO/2 = ~6kHz
+    128          // Set MCLK = SMCLK = DCO = 1MHz
+    129          // Set all I/O pins to out low
+    130          // Work around silicon bugs
+    131          // Select 1 of the 3 alternate pins
+    132          //  for TACCTL1 to control IR_Tx
+    133          // Enable the optional external
+    134          //  bypass cap for Vref if any
+    135          {
+    136            BCSCTL3 = LFXT1S_2;
+    137            BCSCTL1 = CALBC1_1MHZ|DIVA_1;
+    138            DCOCTL = CALDCO_1MHZ;
+    139            P1OUT = 0;
+    140            P1DIR = 0xFF;
+    141            P2OUT = 0;
+    142            P2DIR = 0xFF;
+    143            TACTL = 0;
+    144            TACCTL0 = 0;
+    145            TACCTL1 = 0;
+    146          #ifdef HAS_BCL9_BUG
+    147            BCSCTL2 = SELM_1|DIVM_3;
+    148            BCSCTL2 = 0;
+    149          #endif
+    150          #ifdef HAS_SDA2_BUG
+    151            SDA2_BUG_FIX = 0x31;
+    152          #endif
+    153          #if defined(IR_TX_IS_P26)
+    154            P2SEL = BIT6;
+    155          #elif defined(IR_TX_IS_P12)
+    156            P1SEL = BIT2;
+    157          #elif defined(IR_TX_IS_P16)
+    158            P1SEL = BIT6;
+    159          #else
+    160          #error "You must use P26, P12 or P16 for IR Tx"
+    161          #endif
+    162          #ifdef HAS_VREF_CAP
+    163            P1SEL |= BIT3;
+    164          #endif
+    165          }
+    166          
+    167          // --------- Part 6 ---------------------------
+    168          
+    169          void main( void )
+    170          {
+    171            int result[3];
+    172            init();
+    173            while (1)
+    174            {
+    175              WDTCTL = WDT_ARST_250; // just in case
+    176          
+    177          //  Read Offset, Temperature, & Vcc
+    178              result[0] = Get_Sd16(SD16INCH_7);
+    179              result[1] = Get_Sd16(SD16INCH_6);
+    180              result[2] = Get_Sd16(SD16INCH_5);
+    181          //  Turn off Vref of SD16
+    182              SD16CTL = 0;
+    183          
+    184          //  Send results out
+    185              IR_Packet(3, result);
+    186          
+    187          //  Set up TA for wakeup
+    188              TACCR0 = 27000;
+    189              TACTL = TASSEL_1|MC_1|TACLR|TAIE;
+    190          
+    191          //  Go to sleep for a while
+    192              WDTCTL = WDT_ARST_1000; // just in case
+    193              _BIS_SR(LPM3_bits|GIE);
+    194          
+    195          //  Disable TA
+    196              TACTL = 0;
+    197              TACCTL0 = 0;
+    198              TACCTL1 = 0;
+    199            }
+    200          }
+    201          
+    202          #pragma vector=TIMERA1_VECTOR
+    203          __interrupt void Timer_A1(void)
+    204          {
+    205            switch(TAIV)
+    206            {
+    207              case 2:  // TACCR1 CCIFG
+    208                break;
+    209              case 10: // TAIFG
+    210                _BIC_SR_IRQ(LPM3_bits|GIE);
+    211                break;
+    212            }
+    213          }
+    214          
+
+Errors: 1
+Warnings: none

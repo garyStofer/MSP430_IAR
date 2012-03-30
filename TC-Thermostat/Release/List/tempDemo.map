@@ -1,0 +1,124 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.60K/386                                         #
+#                                                                              #
+#           Link time     =  28/Mar/2012  18:53:11                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  \\Dell\msp430_iar_projects\TC-Thermostat\Release\ #
+#                            List\tempDemo.map                                 #
+#           Output file 1 =  \\Dell\msp430_iar_projects\TC-Thermostat\Release\ #
+#                            Exe\tempDemo.txt                                  #
+#                            Format: msp430_txt                                #
+#           Command line  =  \\Dell\msp430_iar_projects\TC-Thermostat\Release\ #
+#                            Obj\Temp.r43                                      #
+#                            -o                                                #
+#                            \\Dell\msp430_iar_projects\TC-Thermostat\Release\ #
+#                            Exe\tempDemo.txt                                  #
+#                            -Fmsp430_txt -l                                   #
+#                            \\Dell\msp430_iar_projects\TC-Thermostat\Release\ #
+#                            List\tempDemo.map                                 #
+#                            -xs                                               #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0\430\LIB\"                                   #
+#                            -f                                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\CONFIG\lnk430.xcl"                        #
+#                            (-cmsp430                                         #
+#                            -Z(DATA)DATA16_I,DATA16_Z,DATA16_N,HEAP+_DATA16_H #
+#                            EAP_SIZE=0200-6FFF                                #
+#                            -Z(DATA)CSTACK+_STACK_SIZE#                       #
+#                            -Z(CODE)CSTART,CODE=0200-FFDF                     #
+#                            -Z(CONST)DATA16_C,DATA16_ID,DIFUNCT,CHECKSUM=0200 #
+#                            -FFDF                                             #
+#                            -Z(CONST)INTVEC=FFE0-FFFF                         #
+#                            -Z(CONST)RESET=FFFE-FFFF) -f                      #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\config\multiplier.xcl"                    #
+#                            (-e?Mul8Hw=?Mul8 -e?Mul16Hw=?Mul16                #
+#                            -e?Mul16to32uHw=?Mul16to32u                       #
+#                            -e?Mul16to32sHw=?Mul16to32s -e?Mul32Hw=?Mul32     #
+#                            -e_Mul64iHw=_Mul64i                               #
+#                            -e_Mul32u32uto64iHw=_Mul32u32uto64i               #
+#                            -e?Mul32fHw=_Mul32f -e_Mul64fHwPtr=_Mul64fPtr)    #
+#                            -D_STACK_SIZE=50                                  #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\LIB\CLIB\cl430f.r43"                      #
+#                            -D_DATA16_HEAP_SIZE=50 -s __program_start         #
+#                            -D_DATA20_HEAP_SIZE=50                            #
+#                                                                              #
+#                        Copyright 1987-2007 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           022E  Relocatable, from module : ?cstart
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __core        = 430
+  __double_size = 32
+  __pic         = no
+  __reg_r4      = free
+  __reg_r5      = free
+  __rt_version  = 3
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+DATA16_AN                              0000 - 0000               1   rel    0
+                                       0021 - 0022               2 
+                                       0029 - 002A               2 
+                                       002E - 002E               1 
+                                       0056 - 0058               3 
+                                       00B0 - 00B0               1 
+                                       00B7 - 00B7               1 
+                                       0100 - 0103               4 
+                                       0112 - 0113               2 
+                                       0120 - 0121               2 
+DATA16_I                               0200 - 0217              18   rel    1
+DATA16_Z                               0218 - 022C              15   rel    1
+CSTART                                 022E - 0255              28   rel    1
+CODE                                   0256 - 08B7             662   rel    1
+DATA16_C                                  08B8                       dse    0
+DATA16_ID                              08B8 - 08CF              18   rel    1
+DATA16_AN                              10FC - 10FD               2   rel    0
+CSTACK                                 6FB0 - 6FFF              50   rel    1
+INTVEC                                 FFE0 - FFF5              16   com    1
+RESET                                  FFFE - FFFF               2   rel    1
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 1 674 bytes of CODE  memory
+   125 bytes of DATA  memory (+ 21 absolute )
+    48 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

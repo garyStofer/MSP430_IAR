@@ -1,0 +1,199 @@
+Warning[w12]: Using SFB/SFE in banked or packed segment <CODE> 1 in module SD16_IrTx ( D:\MSP430_IAR_Projects\ezXmit\Release\Obj\SD16_IrTx.r43 )
+Warning[w12]: Using SFB/SFE in banked or packed segment <CODE> 1 in module SD16_IrTx ( D:\MSP430_IAR_Projects\ezXmit\Release\Obj\SD16_IrTx.r43 )
+Warning[w12]: Using SFB/SFE in banked or packed segment <CODE> 1 in module SD16_IrTx ( D:\MSP430_IAR_Projects\ezXmit\Release\Obj\SD16_IrTx.r43 )
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.60K/386                                         #
+#                                                                              #
+#           Link time     =  19/Nov/2009  11:23:02                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  D:\MSP430_IAR_Projects\ezXmit\Release\List\eZxmit #
+#                            .map                                              #
+#           Output file 1 =  D:\MSP430_IAR_Projects\ezXmit\Release\Exe\eZxmit. #
+#                            d43                                               #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#           Command line  =  D:\MSP430_IAR_Projects\ezXmit\Release\Obj\SD16_Ir #
+#                            Tx.r43                                            #
+#                            -o                                                #
+#                            D:\MSP430_IAR_Projects\ezXmit\Release\Exe\eZxmit. #
+#                            d43                                               #
+#                            -l                                                #
+#                            D:\MSP430_IAR_Projects\ezXmit\Release\List\eZxmit #
+#                            .map                                              #
+#                            -xes                                              #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0\430\LIB\"                                   #
+#                            -f                                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\CONFIG\lnk430F2013.xcl"                   #
+#                            (-cmsp430                                         #
+#                            -Z(DATA)DATA16_I,DATA16_Z,DATA16_N,DATA16_HEAP+_D #
+#                            ATA16_HEAP_SIZE=0200-027F                         #
+#                            -Z(DATA)CSTACK+_STACK_SIZE#                       #
+#                            -Z(CODE)INFO=1000-10FF -Z(CODE)INFOA=10C0-10FF    #
+#                            -Z(CODE)INFOB=1080-10BF -Z(CODE)INFOC=1040-107F   #
+#                            -Z(CODE)INFOD=1000-103F                           #
+#                            -Z(CONST)DATA16_C,DATA16_ID,DIFUNCT=F800-FFDF     #
+#                            -Z(CONST)DATA20_C,DATA20_ID=F800-FFDF             #
+#                            -Z(CODE)CSTART,ISR_CODE=F800-FFDF                 #
+#                            -P(CODE)CODE=F800-FFDF -Z(CODE)INTVEC=FFE0-FFFF   #
+#                            -Z(CODE)RESET=FFFE-FFFF) -D_STACK_SIZE=32         #
+#                            -Fubrof                                           #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0\430\LIB\CLIB\cl430f.r43"                      #
+#                            -D_DATA16_HEAP_SIZE=0 -s __program_start          #
+#                            -D_DATA20_HEAP_SIZE=50                            #
+#                                                                              #
+#                        Copyright 1987-2007 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           F800  Relocatable, from module : ?cstart
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __core        = 430
+  __double_size = 32
+  __pic         = no
+  __reg_r4      = free
+  __reg_r5      = free
+  __rt_version  = 3
+
+                ****************************************
+                *                                      *
+                *              ENTRY LIST              *
+                *                                      *
+                ****************************************
+
+?FILLER_BYTES
+?ABS_ENTRY_MOD
+  _DATA20_HEAP_SIZE                          0050 
+  _DATA16_HEAP_SIZE                          0000 
+  _STACK_SIZE                                0032 
+SD16_IrTx ( D:\MSP430_IAR_Projects\ezXmit\Release\Obj\SD16_IrTx.r43 )
+  DCOCTL                                     0056 
+  BCSCTL1                                    0057 
+  BCSCTL2                                    0058 
+  BCSCTL3                                    0053 
+  FCTL1                                      0128 
+  FCTL2                                      012A 
+  FCTL3                                      012C 
+  P1OUT                                      0021 
+  P1DIR                                      0022 
+  P1SEL                                      0026 
+  P2OUT                                      0029 
+  P2DIR                                      002A 
+  P2SEL                                      002E 
+  SD16INCTL0                                 00B0 
+  SD16AE                                     00B7 
+  SD16CTL                                    0100 
+  SD16CCTL0                                  0102 
+  SD16MEM0                                   0112 
+  TAIV                                       012E 
+  TACTL                                      0160 
+  TACCTL0                                    0162 
+  TACCTL1                                    0164 
+  TACCR0                                     0172 
+  TACCR1                                     0174 
+  WDTCTL                                     0120 
+  CALDCO_1MHZ                                10FE 
+  CALBC1_1MHZ                                10FF 
+  IR_tmp                                     0200 
+  IR_Tx                                      F8D4 
+  IR_ISR                                     F96C 
+  IR_Packet                                  F90E 
+  Get_Sd16                                   F940 
+  SD16ISR                                    F9A8 
+  Timer_A1                                   F992 
+  init                                       F88C 
+  main                                       F80C 
+  SD16ISR::??INTVEC 10                       FFEA 
+  Timer_A1::??INTVEC 16                      FFF0 
+  IR_ISR::??INTVEC 18                        FFF2 
+?_exit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  _exit                                      F9B4 
+?clibexit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  exit                                       F9B0 
+?clibstubs ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?__exit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  __exit                                     F9B8 
+  ?C_EXIT                                    F9B8 
+?reset_vector ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  ?reset_vector                              FFFE 
+?cstart ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+  __program_start                            F800 
+  ?cstart_begin                              F800 
+  ?cstart_call_main                          F804 
+  ?cstart_end                                F80C 
+lowinit ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?memcpy ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?memmove ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?memzero ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?setjmp ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?longjmp ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+?SwitchKey16 ( C:\Program Files\IAR Systems\Embedded Workbench 4.0\430\LIB\CLIB\cl430f.r43 )
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+DATA16_AN                              0021 - 0022               2   rel    0
+                                       0026 - 0026               1 
+                                       0029 - 002A               2 
+                                       002E - 002E               1 
+                                       0053 - 0053               1 
+                                       0056 - 0058               3 
+                                       00B0 - 00B0               1 
+                                       00B7 - 00B7               1 
+                                       0100 - 0103               4 
+                                       0112 - 0113               2 
+                                       0120 - 0121               2 
+                                       0128 - 012F               8 
+                                       0160 - 0165               6 
+                                       0172 - 0175               4 
+DATA16_I                                  0200                       dse    0
+DATA16_Z                                  0200                       dse    0
+DATA16_N                               0200 - 0201               2   rel    1
+CSTACK                                 024E - 027F              32   rel    1
+DATA16_AN                              10FE - 10FF               2   rel    0
+CSTART                                 F800 - F80B               C   rel    1
+<CODE> 1                               F80C - F9B9             1AE   rel    1
+INTVEC                                 FFE0 - FFF3              14   com    1
+RESET                                  FFFE - FFFF               2   rel    1
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 464 bytes of CODE memory
+  52 bytes of DATA memory (+ 40 absolute )
+
+Errors: none
+Warnings: 3
+
