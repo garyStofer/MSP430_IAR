@@ -7928,6 +7928,78 @@ Source: e_os_all.pdf</description>
 <vertex x="-4.75" y="0" curve="43.010397"/>
 </polygon>
 </package>
+<package name="PT-10">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-3.175" y1="-4.064" x2="3.175" y2="-4.064" width="0.127" layer="21" curve="-288.924644"/>
+<wire x1="3.175" y1="-4.064" x2="3.175" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-5.715" x2="-3.175" y2="-4.064" width="0.127" layer="51"/>
+<wire x1="-2.794" y1="-5.715" x2="-2.794" y2="-3.175" width="0.127" layer="51"/>
+<wire x1="-2.794" y1="-3.175" x2="-1.905" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="-2.54" x2="-0.635" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-3.175" x2="-0.635" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-4.445" x2="-1.27" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-4.445" x2="-1.27" y2="-5.715" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-5.715" x2="1.27" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-4.445" x2="0.635" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-4.445" x2="0.635" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-3.175" x2="1.905" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-2.54" x2="2.794" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="2.794" y1="-3.175" x2="2.794" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-5.715" x2="3.175" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="0.889" y1="1.397" x2="-0.127" y2="0.381" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.381" x2="-0.508" y2="0.762" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="0.762" x2="-0.508" y2="0" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="0" x2="-1.397" y2="-0.889" width="0.127" layer="21"/>
+<wire x1="1.397" y1="0.889" x2="0.381" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="0.381" y1="-0.127" x2="0.762" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="0.762" y1="-0.508" x2="0" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.508" x2="-0.889" y2="-1.397" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.8034" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="2.794" width="0.0508" layer="21"/>
+<pad name="1" x="-2.54" y="-5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="2" x="2.54" y="-5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="3" x="0" y="5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<text x="-3.175" y="6.35" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.048" y="-7.62" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="PT-10S">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-1.905" y1="-1.27" x2="-1.27" y2="-1.905" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-1.905" x2="1.27" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-1.905" x2="1.905" y2="-1.27" width="0.127" layer="51"/>
+<wire x1="-4.445" y1="-1.27" x2="4.445" y2="-1.27" width="0.127" layer="51"/>
+<wire x1="-0.635" y1="3.175" x2="-0.635" y2="2.54" width="0.127" layer="21"/>
+<wire x1="0.635" y1="2.54" x2="0.635" y2="3.175" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="3.175" x2="4.445" y2="3.175" width="0.127" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="4.445" y2="3.175" width="0.127" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="-1.27" x2="-5.08" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="3.175" x2="-5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="-0.635" x2="5.08" y2="-0.635" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-0.635" x2="4.445" y2="-1.27" width="0.127" layer="21"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="2" x="2.54" y="-1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="3" x="0" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<text x="-2.54" y="3.7846" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-4.2164" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="PT-SPIN">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-8.89" y1="-2.54" x2="8.89" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="8.89" y1="-2.54" x2="8.89" y2="2.54" width="0.127" layer="21"/>
+<wire x1="8.89" y1="2.54" x2="-8.89" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.127" layer="21"/>
+<pad name="3" x="-1.27" y="1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<pad name="2" x="6.35" y="-1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<pad name="1" x="-6.35" y="-1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<text x="-3.175" y="3.175" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-1.778" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-9.525" y1="-1.27" x2="-8.89" y2="1.27" layer="21"/>
+<rectangle x1="-10.16" y1="0.381" x2="-9.525" y2="1.27" layer="21"/>
+<rectangle x1="-10.16" y1="-1.27" x2="-9.525" y2="-0.381" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R-US">
@@ -7966,6 +8038,24 @@ Source: e_os_all.pdf</description>
 <rectangle x1="-1.651" y1="-2.54" x2="1.651" y2="-1.651" layer="94"/>
 <pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
+</symbol>
+<symbol name="POTEURO">
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.778" x2="2.667" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.778" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.54" y="-5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="2.54" y="2.54"/>
+<vertex x="2.667" y="3.81"/>
+<vertex x="1.778" y="2.921"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -10819,6 +10909,44 @@ Source: e_os_all.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="POTENTIOMETER_" prefix="R" uservalue="yes">
+<description>&lt;b&gt;Potentiometer&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="POTEURO" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="PT-10" package="PT-10">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PT-10S" package="PT-10S">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PT_SPIN" package="PT-SPIN">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="supply2">
@@ -12500,12 +12628,12 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <part name="X4" library="con-molex" deviceset="22-23-2021" device="" value="PWR"/>
 <part name="V4" library="supply2" deviceset="GND" device=""/>
 <part name="Q1" library="transistor-npn" deviceset="2N2219A" device="TO92_EBC" value="2N2219A"/>
-<part name="R4" library="rcl" deviceset="R-US_" device="M0805" value="29K"/>
+<part name="R4" library="rcl" deviceset="R-US_" device="M0805" value="12k"/>
 <part name="V3" library="supply2" deviceset="GND" device=""/>
 <part name="HEATERCTRL-" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="HEATERCTRL+" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="LED1" library="led" deviceset="LED" device="5MM"/>
-<part name="R5" library="rcl" deviceset="R-US_" device="0207/15" value="32 O"/>
+<part name="R5" library="rcl" deviceset="R-US_" device="0207/15" value="330O"/>
 <part name="P1_5" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="P1_4" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="P2_7" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
@@ -12516,15 +12644,26 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <part name="VCC" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="D1" library="dedenbear" deviceset="1N4148" device=""/>
 <part name="C5" library="rcl" deviceset="C-US" device="C0805" value="1uf"/>
-<part name="P1_1" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="P1_2" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
+<part name="P1_3" library="Stofer" deviceset="SOLDER_POINT" device="A"/>
 <part name="C6" library="rcl" deviceset="C-US" device="C0805" value="1uf"/>
 <part name="X2" library="con-phoenix-350" deviceset="1751248" device=""/>
+<part name="R6" library="rcl" deviceset="POTENTIOMETER_" device="PT-10" value="5k"/>
+<part name="R7" library="rcl" deviceset="R-US_" device="0207/15" value="5k"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="-50.8" y="55.88" size="1.778" layer="91">Vin 4.0V max </text>
+<wire x1="-2.54" y1="12.7" x2="-2.54" y2="17.78" width="0.1524" layer="97"/>
+<wire x1="-2.54" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="97"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-2.54" width="0.1524" layer="97"/>
+<wire x1="-5.08" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="97"/>
+<wire x1="10.16" y1="-2.54" x2="45.72" y2="-2.54" width="0.1524" layer="97"/>
+<wire x1="45.72" y1="-2.54" x2="68.58" y2="20.32" width="0.1524" layer="97"/>
+<wire x1="5.08" y1="17.78" x2="5.08" y2="2.54" width="0.1524" layer="97"/>
+<text x="7.62" y="-7.62" size="1.778" layer="97">setpoint</text>
+<wire x1="-5.08" y1="12.7" x2="-2.54" y2="12.7" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="35.56" y="35.56"/>
@@ -12563,11 +12702,13 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <instance part="VCC" gate="G$1" x="71.12" y="48.26" rot="R270"/>
 <instance part="D1" gate="G$1" x="-22.86" y="58.42"/>
 <instance part="C5" gate="G$1" x="-27.94" y="25.4"/>
-<instance part="P1_1" gate="G$1" x="5.08" y="12.7" rot="R270"/>
-<instance part="P1_2" gate="G$1" x="2.54" y="12.7" rot="R270"/>
+<instance part="P1_2" gate="G$1" x="5.08" y="12.7" rot="R270"/>
+<instance part="P1_3" gate="G$1" x="2.54" y="12.7" rot="R270"/>
 <instance part="C6" gate="G$1" x="-20.32" y="25.4"/>
 <instance part="X2" gate="-1" x="-45.72" y="35.56" rot="R180"/>
 <instance part="X2" gate="-2" x="-45.72" y="40.64" rot="R180"/>
+<instance part="R6" gate="1" x="5.08" y="-2.54" rot="R180"/>
+<instance part="R7" gate="G$1" x="-5.08" y="7.62" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -12661,7 +12802,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <wire x1="-15.24" y1="33.02" x2="-15.24" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="5"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<pinref part="P1_2" gate="G$1" pin="P$1"/>
+<pinref part="P1_3" gate="G$1" pin="P$1"/>
 <wire x1="2.54" y1="22.86" x2="2.54" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -12692,7 +12833,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <wire x1="-7.62" y1="35.56" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="4"/>
-<pinref part="P1_1" gate="G$1" pin="P$1"/>
+<pinref part="P1_2" gate="G$1" pin="P$1"/>
 <wire x1="5.08" y1="35.56" x2="10.16" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
 </segment>
