@@ -1,0 +1,4 @@
+Not shown on the controller schematic !
+
+The set point potentiometer high end needs to be wired to P1.3 (the Vref output) via a 5K resistor to reduce the voltage on the wiper ( wired to P1.2) to <= 1/2 Vref, otherwise the ADC will overflow. 
+

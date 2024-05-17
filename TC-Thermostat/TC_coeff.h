@@ -16,7 +16,7 @@ float TC_coeff[N_poly+1] = {  0.0, // d0
                   };
 #else   // K-Type coeff
 #ifdef K_TYPE_TC
-#define N_poly 7
+#define N_poly 9   // this table can be used up to 20mv , i.e.500 deg C
 float TC_coeff[N_poly+1]= {  0.0, // d0
                      2.508355E+1, // d1
                      7.860106E-2, // d2
@@ -25,6 +25,8 @@ float TC_coeff[N_poly+1]= {  0.0, // d0
                     -1.228034E-2,  // d5
                      9.804036E-4, // d6
                     -4.413030E-5, // d7
+                    1.0527734e-06,
+                    -1.052755e-08,
                   };
 #endif
 #endif
